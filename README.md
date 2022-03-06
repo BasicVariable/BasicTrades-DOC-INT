@@ -5,7 +5,7 @@ https://discord.gg/6ASdpBjbDX / Basic#2142
 ```
 1. Download the bot from the latest pin in #downloads
 2. Extract the zip
-3. Open & Edit config.json to add your cookies, bot token, and discord channels
+3. Open & Edit config.json to add your cookie, proxy(s), bot token, and discord channels
 4. Run the index-win.exe file (either in command prompt or by just double clicking it)
 ```
 
