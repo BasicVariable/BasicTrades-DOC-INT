@@ -5,7 +5,7 @@ https://discord.gg/6ASdpBjbDX / Basic#2142
 ```
 1. Download the bot from the latest pin in #downloads
 2. Extract the zip
-3. Open & Edit config.json to add your cookie, proxy(s), bot token, and discord channels
+3. Open & Edit config.json to the documentation below
 4. Run the index-win.exe file (either in command prompt or by just double clicking it)
 ```
 
@@ -24,46 +24,59 @@ https://discord.gg/6ASdpBjbDX / Basic#2142
 
 #Documentation
 ```
-> "cookie"
+> "auth" > "cookie"
 Your RBX cookie
 
-> "bot_token"
-Your discord bot token
-
-> "discordid"
-YOUR discord ID
-
-> "non-rotating"
-When set to true the bot will use non-rotating proxies in the proxies.txt file
-
-> "rotating"
-When non-rotating is set to false the bot will use this rotating proxy for sending trades, the format is user:pass@hostname:port
-
-> "key"
+> "auth" > "key"
 Your whitelist key
 
-> "channelid"
-The discord channel ID the bot will output something specific to
+> "discord_bot" > "bot_token"
+Your discord bot token
 
-> "hex_color"
-The hex color the discord embed will be (on regular outputs)
+> "discord_bot" > "discordid"
+YOUR discord ID
 
-> "prefix"
+> "discord_bot" > "prefix"
 The symbol, number, or phrase that will go before discord commands
 
-> "error_channel"
-The discord channel ID the bot will output errors
+> "discord_bot" > "channels" > "output"
+The channel (as a channelid) where BT will post sent trades
 
-> "last_online"
-The maximum amount of time, in seconds, from the last time a item owner was online to be queued
-EX: If a madness owner was last online yesterday and "last_online" is set to 604800 (a week) they will be queued
+> "discord_bot" > "channels" > "inv_changes"
+The channel (as a channelid) where BT will post your account's inventory changes
 
-> "send_delay"
+> "discord_bot" > "channels" > "errors"
+The channel (as a channelid) where BT will post errors that occur as a trade is being sent
+
+> "sending" > "last_online"
+The maximum amount of time, in number{d-m} format, from the last time a item owner was online to be queued
+EX: If a madness owner was last online yesterday and "last_online" is set to 1w (a week) they will be queued
+
+> "sending" > "send_delay"
 The interval at which the bot will send trades (seconds)
 
-> "request_timeout"
-The maximum amount of time a request can take, in seconds, before being canceled
+> "sending" > "uuc_check" > "?"
+Whether or not you'd like the check enabled
 
-> "rstats_int"
-The interval at which the bot will output runtime statistics (locally)
+> "sending" > "uuc_check" > "scaninv_times"
+The amount of pages of the person's inventory you'd like the bot to look through before stopping
+
+> "sending" > "IPL_bypass"
+Whether or not you'd like the bot to use the IP-Lock Bypass to send trades through your proxies
+
+> "sending" > "DNS_to"
+A list of people you'd like the bot to not send trades to
+EX: [1, 2, 3, 4]
+
+> "proxies.txt" (File)
+The text file you'll place your proxies in:
+EX:
+user:pass@host:port
+user:pass@host:port
+user:pass@host:port
+
+> "ms" (command)
+The command used to start mass-sending to the owners of a specific item
+EX:
+&ms itemid [uaid,uaid,uaid,uaid]
 ```
